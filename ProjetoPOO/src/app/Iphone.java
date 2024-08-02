@@ -31,7 +31,7 @@ public class Iphone {public static void main(String[] args) {
 			break;
 			
 		default:
-			System.out.println("app n reconhecido.");
+			System.out.println("Aplicativo não reconhecido.");
 			break;
 		
 		}

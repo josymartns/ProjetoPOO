@@ -3,33 +3,37 @@ import app.servicos.AparelhoTelefonico;
 import app.servicos.NavegadorInternet;
 import app.servicos.ReprodutorMusical;
 
-public class Iphone {
-	public static void main(String[] args) {
+public class Iphone {public static void main(String[] args) {
+	
+	AparelhoTelefonico ap = new AparelhoTelefonico();	
+	NavegadorInternet ni = new NavegadorInternet();
+	ReprodutorMusical rm = new ReprodutorMusical();
+	
+	String appEscolhido = "url";
 		
-		AparelhoTelefonico ap = null;	
-		NavegadorInternet ni = null;
-		ReprodutorMusical rm = null;
-		
-		String appEscolhido = "musica";
-		
-		if (appEscolhido.equals("numero")) {
-			ap = new AparelhoTelefonico();
+	switch(appEscolhido) {
+		case "numero":
 			ap.ligar();
 			ap.atender();
 			ap.iniciarCorreioVoz();
-
-		}else if(appEscolhido.equals("url")) {
-			ni = new NavegadorInternet();
+			break;
+			
+		case "url":
 			ni.exibirPagina();
 			ni.adicionarNovaAba();
 			ni.atualizarPagina();
-			
-		}else if(appEscolhido.equals("musica")) {
-			rm = new ReprodutorMusical();
+			break;
+				
+		case "musica":
 			rm.selecionarMusica();
 			rm.tocar();
 			rm.pausar();
-
+			break;
+			
+		default:
+			System.out.println("app n reconhecido.");
+			break;
+		
 		}
 	}
 }
